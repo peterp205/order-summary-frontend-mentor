@@ -1,0 +1,283 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+
+/* Variables */
+:root{
+
+    --primary-pale-blue: hsl(225, 100%, 94%);
+    --primary-bright-blue: hsl(245, 75%, 52%);
+    --button-hover: hsl(245, 83%, 68%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    --spacer-small: 20px;
+    --spacer-mid: 40px;
+    --spaced-large: 60px;
+    --border-radius-s: .2rem;
+    --border-radius-m: .4rem;
+    --border-radius-l: .6rem;    
+    --border-radius-xl: .8rem;
+    --border-radius-xll: 1rem;
+
+}
+
+/* Boiler plate */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+
+}
+
+body{
+}
+
+
+/* Outter column layout*/
+.container{
+    min-height: calc(100vh - 40px);
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-color: var(--primary-pale-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+
+
+/* Card layout */
+
+.card{
+    background: var(--very-pale-blue);
+    width: 90%;
+    max-width: 400px;
+    border-radius: var(--border-radius-xl);
+    margin-inline: auto;
+}
+
+.content{
+    margin-top: var(--spacer-small);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer{
+    margin-top: var(--spacer-mid);
+    height: 40px;
+    margin-inline: auto;
+}
+
+/* Hero image */
+
+.hero-img img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0 ;
+}
+
+/* Header of component */
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.header h1{
+    font-weight: 900;
+}
+
+/* Annual plan*/
+.annual-plan{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8F9FE;
+    border-radius: .5rem;
+    padding: 10px 15px;
+    align-items: center;
+}
+
+.annual-plan img{
+    height: 75%;
+}
+
+.cost{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.annual-plan-cost{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.annual-plan-cost h3{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.annual-plan-cost p{
+    color: gray;
+    font-weight: 500;
+    font-size: .8rem;
+}
+
+.cost p a:hover{
+    text-decoration: none;
+}
+
+a.change{
+    color: var(--button-hover);
+    cursor: pointer;
+    font-weight: 700;
+    transition: .5s ease;
+}
+
+a.change:hover{
+    text-decoration: none;
+}
+/* Button design */
+
+button{
+    background: var(--primary-bright-blue);
+    color: white;
+    border-radius: var(--border-radius-m);
+    font-weight: 700;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    transition: .5s ease;
+    -webkit-box-shadow: 0px 20px 31px -8px rgba(78,63,250,0.41);
+-moz-box-shadow: 0px 20px 31px -8px rgba(78,63,250,0.41);
+box-shadow: 0px 20px 31px -8px rgba(78,63,250,0.41);
+}
+
+button:hover{
+    background: var(--button-hover);
+}
+
+.buttons p{
+    margin-top: var(--spacer-small);
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.buttons p a{
+    color: gray;
+    text-decoration: none;
+}
+
+.buttons p a:hover{
+    color: black;
+}
+
+
+/* media query */
+
+
+
+@media only screen and (max-width: 425px) {
+    .container{
+        background-image: url('images/pattern-background-mobile.svg'); 
+        min-height: 0;
+        min-width: 300px;
+    }
+
+        .card{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
